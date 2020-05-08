@@ -1,15 +1,11 @@
 import React from 'react';
+import EmployeeTable from "./components/EmployeeTable"
 // import './App.css';
-import Wrapper from "./components/Wrapper";
-import Header from "./components/Header";
 
 
 function App() {
-  return (
-  <Wrapper>
-    <Header/>
-    </Wrapper>
-   )
+  return <EmployeeTable/>;
+   
 }
 
 export default App;
