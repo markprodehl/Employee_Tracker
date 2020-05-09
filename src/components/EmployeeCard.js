@@ -16,6 +16,12 @@ function EmployeeCard(props) {
         let newDate = replaced[0];
         return newDate;
     }
+    let data;
+    if (props.search === ""){
+     data = props.results;
+    } else {
+    data = props.filteredEmployees
+    }
 
     return (
         <table>
@@ -29,8 +35,8 @@ function EmployeeCard(props) {
                 </tr>
             </thead>
             <tbody>
-                {props.results.map(result => (
-                    // <tr>{result}</tr>
+                {data.map(result => (
+                    
                     <tr key={result.login.id}>
                         <td><img alt={result.name.first} className="img-fluid" src={result.picture.thumbnail} /></td>
                         <td style={tableRowStyle}>{result.name.first} {result.name.last}</td>

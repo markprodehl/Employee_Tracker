@@ -10,8 +10,8 @@ const searchStyle = {
     width: "20%"
 };
 
-function SearchForm(props) {
-    console.log("searchFromProps: ", props)
+function SearchBox(props) {
+    // console.log("searchFromProps: ", props)
   return (
     <form>
         <br/>
@@ -36,4 +36,4 @@ function SearchForm(props) {
   );
 }
 
-export default SearchForm;
+export default SearchBox;
