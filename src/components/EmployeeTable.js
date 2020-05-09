@@ -41,7 +41,7 @@ class EmployeeTable extends Component {
     // handleSearchChange = (event) => {
     //     this.setState({ search: event.target.value });
     //   };
-
+    
     // // // When the form is submitted, search the API for the value of `this.state.search`
     // handleFormSubmit = event => {
     //     event.preventDefault();
@@ -64,9 +64,7 @@ class EmployeeTable extends Component {
                 this.state.filteredEmployees.push(this.state.results[i])
                 this.setState({filteredEmployees: this.state.filteredEmployees})
                console.log(this.state.filteredEmployees)
-
             }}
-
     }
 
     render() {
@@ -74,6 +72,7 @@ class EmployeeTable extends Component {
         return (
             <Wrapper>
                 <Header />
+                <div class="container">
                 <SearchBox
                     search={this.state.search}
                     filteredEmployees={this.filteredEmployees}
@@ -85,6 +84,7 @@ class EmployeeTable extends Component {
                 search={this.state.search}
                 filteredEmployees={this.state.filteredEmployees}
                 />
+                </div>
                 
                 {/* <DataTable results={this.state.results} /> */}
             </Wrapper>

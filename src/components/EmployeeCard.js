@@ -16,33 +16,60 @@ function EmployeeCard(props) {
         let newDate = replaced[0];
         return newDate;
     }
+
     let data;
-    if (props.search === ""){
-     data = props.results;
+    if (props.search === "") {
+        data = props.results;
     } else {
-    data = props.filteredEmployees
+        data = props.filteredEmployees
     }
+    // const ASCENDING = "ascending";
+    // const DESCENDING = "descending";
+
+    // const sortEmployees = (order, field) => {
+    //     const sortedChars = this.state.filteredEmployees.slice(0).sort((a, b) => {
+    //         if (order === ASCENDING) {
+    //             return (a[field] || "").localeCompare(b[field] || "");
+    //         }
+    //         return (b[field] || "").localeCompare(a[field] || "");
+    //     });
+    //     this.state.filteredEmployees(sortedChars);
+    // };
 
     return (
         <table>
             <thead>
                 <tr >
                     <th style={tableStyle}>Image</th>
-                    <th style={tableStyle}>Name</th>
-                    <th style={tableStyle}>Phone</th>
-                    <th style={tableStyle}>Email</th>
-                    <th style={tableStyle}>Date of Birth</th>
+
+                    <th style={tableStyle}>Name{""}
+                    {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
+                    <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
+                    </th>
+
+                    <th style={tableStyle}>Phone{""}
+                    {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
+                    <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
+                    </th>
+                    <th style={tableStyle}>Email
+                    {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
+                    <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
+                    </th>
+                    <th style={tableStyle}>DOB
+                    {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
+                    <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 {data.map(result => (
-                    
+
                     <tr key={result.login.id}>
                         <td><img alt={result.name.first} className="img-fluid" src={result.picture.thumbnail} /></td>
                         <td style={tableRowStyle}>{result.name.first} {result.name.last}</td>
                         <td>{result.phone}</td>
                         <td>{result.email} </td>
-                        <td>{newDateOfBirth(result.dob.date)}</td>  
+                        <td>{newDateOfBirth(result.dob.date)}</td>
                     </tr>
                 ))}
             </tbody >
