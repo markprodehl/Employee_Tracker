@@ -1,13 +1,5 @@
 import React from "react";
 
-const tableStyle = {
-    paddingRight: "200px",
-}
-
-const tableRowStyle = {
-    padding: "20px 0 20px 0"
-}
-
 function EmployeeCard(props) {
     console.log(props)
     let newDateOfBirth = (dob) => {
@@ -37,25 +29,25 @@ function EmployeeCard(props) {
     // };
 
     return (
-        <table>
+        <table className="table table-striped bg-muted">
             <thead>
                 <tr >
-                    <th style={tableStyle}>Image</th>
+                    <th>Image</th>
 
-                    <th style={tableStyle}>Name{""}
+                    <th>Name{""}
                     {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
                     <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
                     </th>
 
-                    <th style={tableStyle}>Phone{""}
+                    <th>Phone{""}
                     {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
                     <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
                     </th>
-                    <th style={tableStyle}>Email
+                    <th>Email
                     {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
                     <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
                     </th>
-                    <th style={tableStyle}>DOB
+                    <th>DOB
                     {/* <span onClick={() => sortEmployees(ASCENDING, "name")}>🔼</span>
                     <span onClick={() => sortEmployees(DESCENDING, "name")}>🔽</span> */}
                     </th>
@@ -66,7 +58,7 @@ function EmployeeCard(props) {
 
                     <tr key={result.login.id}>
                         <td><img alt={result.name.first} className="img-fluid" src={result.picture.thumbnail} /></td>
-                        <td style={tableRowStyle}>{result.name.first} {result.name.last}</td>
+                        <td >{result.name.first} {result.name.last}</td>
                         <td>{result.phone}</td>
                         <td>{result.email} </td>
                         <td>{newDateOfBirth(result.dob.date)}</td>

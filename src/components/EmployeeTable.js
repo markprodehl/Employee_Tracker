@@ -4,7 +4,6 @@ import Wrapper from "./Wrapper";
 import Header from "./Header";
 import EmployeeCard from "./EmployeeCard";
 import SearchBox from "./SearchBox";
-// import DataTable from "./DataTable";
 
 class EmployeeTable extends Component {
     state = {
@@ -38,23 +37,6 @@ class EmployeeTable extends Component {
         }); this.filteredEmployees()
     };
 
-    // handleSearchChange = (event) => {
-    //     this.setState({ search: event.target.value });
-    //   };
-    
-    // // // When the form is submitted, search the API for the value of `this.state.search`
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     this.searchEmployees(this.state.search);
-    // };
-
-    // filteredEmployees() {
-    //     const search = this.state.search.toLowerCase();
-    //     return this.state.results.filter((results) => {
-    //       return results.name.toLowerCase().includes(search);
-    //     });
-    //   }
-
     filteredEmployees() {
         // this.setState({filteredEmployees: []})
         this.state.filteredEmployees = []
@@ -66,7 +48,7 @@ class EmployeeTable extends Component {
                console.log(this.state.filteredEmployees)
             }}
     }
-
+    
     render() {
         
         return (
@@ -78,21 +60,16 @@ class EmployeeTable extends Component {
                     filteredEmployees={this.filteredEmployees}
                     handleInputChange={this.handleInputChange}
                 />
-                <EmployeeCard
-                
+                <EmployeeCard                
                 results={this.state.results}
                 search={this.state.search}
                 filteredEmployees={this.state.filteredEmployees}
                 />
-                </div>
-                
+                </div>                
                 {/* <DataTable results={this.state.results} /> */}
             </Wrapper>
         );
     }
-
-
-
 }
 
 export default EmployeeTable;

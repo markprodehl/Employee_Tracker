@@ -1,11 +1,5 @@
 import React from "react";
 
-// const divStyle = {
-//     display: "inline",
-//     color: "green"
-
-// };
-
 const searchStyle = {
     width: "20%"
 };
@@ -23,14 +17,10 @@ function SearchBox(props) {
           value={props.search}
           name="search"
           type="text"
-          className="form-control"
-          placeholder="Search Employees"
+          className="form-control border-success"
+          placeholder="Search"
           id="search"
-        />
-        
-        {/* <button onClick={props.handleFormSubmit} className="btn btn-primary">
-          Search
-        </button> */}
+        />       
       </div>
     </form>
   );
